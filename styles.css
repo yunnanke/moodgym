@@ -351,4 +351,5 @@
 .shell:has(#home.active)>.footer>span{text-align:center}
 #soft-support .support-bots{margin-top:28px}
 #soft-support .support-bots>h3{font-size:18px}
+#soft-support [aria-labelledby="support-people-title"]>h3{font-size:18px}
 #soft-support .profile-contacts a:first-child{font-size:15px}
