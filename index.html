@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f3eb">
-  <meta name="description" content="MoodGym: короткая практика в трудную минуту.">
+  <meta name="description" content="Кликабельный тестовый макет MoodGym: короткая практика в трудную минуту.">
   <title>MoodGym — короткая пауза</title>
-  <link rel="stylesheet" href="styles.css?v=2026-11-02-ux-5">
+  <link rel="stylesheet" href="styles.css?v=2026-11-02-ux-6">
 </head>
 <body>
   <main class="shell">
@@ -103,7 +103,8 @@
             <button type="button" class="finish-option finish-help-option" data-feedback="nochange">Пока не легче или стало хуже <span aria-hidden="true">›</span></button>
           </div>
         </section>
-        <section class="finish-group" id="finish-next-actions" aria-labelledby="finish-next-title">
+        <button type="button" class="finish-evaluation-summary" id="finish-evaluation-summary" hidden>Стало немного легче <span>Изменить</span></button>
+        <section class="finish-group" id="finish-next-actions" aria-labelledby="finish-next-title" hidden>
           <h3 id="finish-next-title">Следующий шаг</h3>
           <div class="finish-options finish-next-options">
             <button type="button" class="finish-option finish-primary-option" data-feedback="done">Закончить и вернуться к делам <span aria-hidden="true">›</span></button>
@@ -125,7 +126,7 @@
           <p class="eyebrow">поддержка рядом</p>
         </div>
         <h2 id="safety-title">Есть мысли навредить себе или не хочется жить?</h2>
-        <p class="safety-reassurance">Сейчас тяжело. Но всё плохое имеет свойство заканчиваться.</p>
+        <p class="safety-reassurance">Мне жаль, что тебе сейчас так тяжело. Не оставайся с этим в одиночку.</p>
         <p class="section-intro">Если ты уже навредил(а) себе или можешь сделать это прямо сейчас — позвони 112. По возможности подойди к человеку рядом и скажи, что тебе нужна помощь.</p>
         <a class="primary-button safety-action" href="tel:112">Позвонить 112 <span aria-hidden="true">›</span></a>
         <button class="secondary-button soft-support-button" type="button" data-go="soft-support">Сейчас прямой опасности нет, но мне очень тяжело</button>
@@ -138,12 +139,26 @@
       <div class="safety-content">
         <div class="support-heading-space" aria-hidden="true"></div>
         <h2 id="soft-support-title">Варианты поддержки</h2>
+        <section class="support-section support-emergency" aria-labelledby="support-emergency-title">
+          <h3 id="support-emergency-title">Если опасность стала непосредственной</h3>
+          <p>Позвони 112. По возможности перейди туда, где есть люди.</p>
+          <a class="primary-button support-emergency-call" href="tel:112">Позвонить 112 <span aria-hidden="true">›</span></a>
+        </section>
         <section class="support-section" aria-labelledby="support-people-title">
           <h3 id="support-people-title">Поговорить с человеком</h3>
-          <p class="country-note"><strong>Контакты для России.</strong> <a href="https://findahelpline.com/" target="_blank" rel="noreferrer">В другой стране — найти местную линию</a></p>
+          <p class="country-note">(Контакты для России. В другой стране — <a href="https://findahelpline.com/" target="_blank" rel="noreferrer">найти местную линию</a>.)</p>
         <div class="support-links">
           <a class="support-link" href="tel:+78002501859"><span><strong>Красный Крест</strong><small>8 800 250-18-59<br>Бесплатно · ежедневно 7:00–22:00 МСК</small></span><span>Позвонить ›</span></a>
         </div>
+        </section>
+        <section class="psychologist-card" aria-labelledby="psychologist-title">
+          <p class="eyebrow">узнать о консультации</p>
+          <h3 id="psychologist-title">Юнна Матвеева · психолог</h3>
+          <p>Личные консультации по тревоге, выгоранию и другим трудным состояниям. Формат, стоимость и свободное время можно уточнить в сообщении.</p>
+          <div class="profile-contacts">
+            <a href="https://t.me/moriarka" target="_blank" rel="noreferrer">Написать в Telegram</a>
+            <a href="https://www.instagram.com/yunnanke_psy/" target="_blank" rel="noreferrer">Instagram · @yunnanke_psy</a>
+          </div>
         </section>
         <section class="support-section support-bots" aria-labelledby="support-bots-title">
           <h3 id="support-bots-title">Написать боту</h3>
@@ -155,22 +170,13 @@
             <a class="moodgym-bot-cta" id="moodgym-bot-link" href="#" hidden>Открыть бота в Telegram</a>
           </section>
         </section>
-        <section class="psychologist-card" aria-labelledby="psychologist-title">
-          <p class="eyebrow">узнать о консультации</p>
-          <h3 id="psychologist-title">Юнна Матвеева · психолог</h3>
-          <p>Личные консультации по тревоге, выгоранию и другим трудным состояниям. Формат, стоимость и свободное время можно уточнить в сообщении.</p>
-          <div class="profile-contacts">
-            <a href="https://t.me/moriarka" target="_blank" rel="noreferrer">Написать в Telegram</a>
-            <a href="https://www.instagram.com/yunnanke_psy/" target="_blank" rel="noreferrer">Instagram · @yunnanke_psy</a>
-          </div>
-        </section>
       </div>
     </section>
 
     <footer class="footer"><span>MOODGYM · ЭМОЦИОНАЛЬНЫЕ НАВЫКИ</span><span class="footer-disclaimer">Это не терапия и не экстренная служба. Только короткая практика и следующий шаг.</span></footer>
   </main>
   <script src="site-bot-config.js?v=2026-10-28-1"></script>
-  <script src="app.js?v=2026-11-02-ux-2"></script>
+  <script src="app.js?v=2026-11-02-ux-3"></script>
 </body>
 </html>
 

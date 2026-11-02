@@ -296,10 +296,14 @@
 .skip-step{color:#4c6c5d;text-decoration:underline;text-decoration-color:#b6c7bb;text-underline-offset:3px}
 .practice-wrap.is-extra .practice-kicker{font-size:16px}
 #finish .finish-group{margin:22px 0 0}
+#finish .finish-group[hidden],#finish .finish-evaluation-summary[hidden]{display:none}
 #finish .finish-group h3{margin:0 0 9px;color:#526c62;font:600 14px/1.4 var(--sans)}
 #finish .finish-options{margin-top:0;grid-template-columns:1fr}
 #finish .finish-evaluation-options{grid-template-columns:repeat(2,minmax(0,1fr))}
 #finish .finish-option{min-height:54px}
+#finish .finish-evaluation-summary{display:flex;width:100%;justify-content:space-between;align-items:center;margin-top:18px;padding:11px 0;border:0;border-bottom:1px solid var(--line);background:none;color:var(--muted);font:500 13px var(--sans);text-align:left;cursor:pointer}
+#finish .finish-evaluation-summary span{color:#526c62;text-decoration:underline;text-underline-offset:3px}
+#finish .finish-evaluation-summary:hover span{color:var(--green)}
 #finish .finish-help-option{border-color:#bd8a70;color:#713a26;background:#fffaf5}
 #finish .finish-primary-option{border-color:var(--green);background:var(--green);color:#fff;font-weight:700}
 #finish .finish-primary-option span{color:#fff}
@@ -308,6 +312,8 @@
 #soft-support .support-section{margin:0 0 18px}
 #soft-support .support-section h3{margin:0 0 7px;color:#526c62;font:600 16px/1.35 var(--sans)}
 #soft-support .support-section>p:not(.country-note){margin:0 0 10px;color:var(--muted);font-size:14px;line-height:1.5}
+#soft-support .country-note{margin:0 0 10px;padding:0;border:0;border-radius:0;background:none;color:var(--muted);font-size:14px;line-height:1.5}
+#soft-support .country-note a{color:inherit;font-weight:500;text-underline-offset:2px}
 #soft-support .support-emergency{padding:14px 16px;border:1px solid #d8b5a0;border-radius:6px;background:#fff8f2}
 #soft-support .support-emergency h3{color:#713a26}
 #soft-support .support-emergency-call{min-height:46px;gap:24px}

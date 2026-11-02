@@ -249,7 +249,8 @@ document.getElementById('practice-back').addEventListener('click', () => window.
 function finishPractice() {
   const area = document.getElementById('feedback-area'); area.hidden = true; area.replaceChildren();
   document.getElementById('finish-evaluation').hidden = false;
-  document.getElementById('finish-next-actions').hidden = false;
+  document.getElementById('finish-evaluation-summary').hidden = true;
+  document.getElementById('finish-next-actions').hidden = true;
   showScreen('finish');
 }
 function advancePracticeStep() {
@@ -260,9 +261,20 @@ document.getElementById('next-step').addEventListener('click', advancePracticeSt
 document.getElementById('skip-step').addEventListener('click', advancePracticeStep);
 document.querySelector('[data-restart]').addEventListener('click', () => showScreen('choose'));
 document.querySelector('[data-extra-practice]').addEventListener('click', startExtraPractice);
+document.getElementById('finish-evaluation-summary').addEventListener('click', () => {
+  document.getElementById('finish-evaluation').hidden = false;
+  document.getElementById('finish-evaluation-summary').hidden = true;
+  document.getElementById('finish-next-actions').hidden = true;
+});
 document.querySelectorAll('[data-feedback]').forEach(button => button.addEventListener('click', () => {
   if (button.dataset.feedback === 'nochange') { showScreen('soft-support'); return; }
   if (button.dataset.feedback === 'done') { showScreen('home'); return; }
+  if (button.dataset.feedback === 'easier') {
+    document.getElementById('finish-evaluation').hidden = true;
+    document.getElementById('finish-evaluation-summary').hidden = false;
+    document.getElementById('finish-next-actions').hidden = false;
+    return;
+  }
   const area = document.getElementById('feedback-area'); area.replaceChildren(); area.hidden = false;
   const person = button.dataset.feedback === 'person';
   const p = document.createElement('p');
@@ -270,6 +282,7 @@ document.querySelectorAll('[data-feedback]').forEach(button => button.addEventLi
   area.append(p);
   if (person) {
     document.getElementById('finish-evaluation').hidden = true;
+    document.getElementById('finish-evaluation-summary').hidden = true;
     document.getElementById('finish-next-actions').hidden = true;
     const card = document.createElement('div'); card.className = 'copy-card';
     const quote = document.createElement('p'); quote.textContent = '«Мне сейчас непросто. Можешь побыть со мной на связи или позвонить?»';
