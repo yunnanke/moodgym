@@ -217,6 +217,18 @@
   #soft-support .support-link small{font-size:14px}
 }
 
+/* Follow-up mobile refinements from the latest phone review. */
+.hero-art-mini{display:none}
+.profile-contacts a{justify-content:center;text-align:center}
+@media(max-width:560px){
+  #home .hero-art-mini{display:block;width:202px;height:194px;margin:0 auto 18px;overflow:visible}
+  #home .hero-art-mini-scene{position:relative;width:420px;height:400px;transform:scale(.48);transform-origin:top left}
+  #home .hero-art-mini .art-caption{right:39px}
+  #home .hero-copy .lead{margin-bottom:13px}
+  #home .hero-copy .hero-art-mini+.primary-button{width:100%;max-width:280px}
+  #soft-support .profile-contacts a{justify-content:center;text-align:center}
+}
+
 .urgent-shortcut{display:block;margin:11px 0 0;padding:0;border:0;background:none;color:#713a26;font:600 14px var(--sans);text-decoration:underline;text-underline-offset:3px;cursor:pointer}.urgent-shortcut:focus-visible{outline:3px solid #a95430;outline-offset:4px}
 
 
