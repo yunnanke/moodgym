@@ -250,7 +250,6 @@ function finishPractice() {
   const area = document.getElementById('feedback-area'); area.hidden = true; area.replaceChildren();
   document.getElementById('finish-evaluation').hidden = false;
   document.getElementById('finish-next-actions').hidden = false;
-  document.querySelector('[data-go="home"].text-button').hidden = false;
   showScreen('finish');
 }
 function advancePracticeStep() {
@@ -272,7 +271,6 @@ document.querySelectorAll('[data-feedback]').forEach(button => button.addEventLi
   if (person) {
     document.getElementById('finish-evaluation').hidden = true;
     document.getElementById('finish-next-actions').hidden = true;
-    document.querySelector('[data-go="home"].text-button').hidden = true;
     const card = document.createElement('div'); card.className = 'copy-card';
     const quote = document.createElement('p'); quote.textContent = '«Мне сейчас непросто. Можешь побыть со мной на связи или позвонить?»';
     const copyButton = document.createElement('button'); copyButton.type = 'button'; copyButton.className = 'copy-button'; copyButton.textContent = 'Скопировать текст';

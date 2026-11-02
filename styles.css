@@ -336,3 +336,8 @@
 @media(max-width:560px){
   #home .hero-copy .hero-art-mini+.primary-button{width:auto;max-width:none}
 }
+
+/* Small finishing touches requested after the UX review. */
+#home .hero-copy>.primary-button{font-size:16px}
+.shell:not(:has(#home.active))>.footer{justify-content:center;text-align:center}
+.shell:not(:has(#home.active))>.footer>span{text-align:center}
