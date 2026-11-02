@@ -341,3 +341,9 @@
 #home .hero-copy>.primary-button{font-size:16px}
 .shell:not(:has(#home.active))>.footer{justify-content:center;text-align:center}
 .shell:not(:has(#home.active))>.footer>span{text-align:center}
+#home .hero-art-mini{margin-bottom:8px}
+#home .hero-art-mini+.primary-button{display:flex;width:max-content;margin:0 auto}
+#home .urgent-shortcut{max-width:none;margin:11px auto 0;text-align:center}
+#home .privacy-note{justify-content:center;margin-left:auto;margin-right:auto;text-align:center}
+.shell:has(#home.active)>.footer{align-items:center;text-align:center}
+.shell:has(#home.active)>.footer>span{text-align:center}
