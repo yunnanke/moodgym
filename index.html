@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="description" content="Кликабельный тестовый макет MoodGym: короткая практика в трудную минуту.">
+  <title>MoodGym — короткая пауза</title>
+  <link rel="stylesheet" href="styles.css?v=2026-11-02-static-1">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#home" data-home aria-label="MoodGym — на главную">
+        <img class="brand-icon" src="assets/moodgym-mark.svg" alt="" aria-hidden="true">
+        <span class="brand-copy"><span class="brand-name">MoodGym</span><span class="brand-home">На главную</span></span>
+      </a>
+      <button class="safety-link" type="button" data-safety>Мне очень плохо · экстренная помощь</button>
+    </header>
+
+    <section class="screen active" id="home" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> короткая пауза для себя</p>
+        <h1 id="home-title">Давай попробуем<br><em>сделать полегче.</em></h1>
+        <p class="lead">Одна минута и один небольшой шаг. Не нужно объяснять, что случилось.</p>
+        <button class="primary-button" type="button" data-go="choose">Начать <span aria-hidden="true">›</span></button>
+        <button class="urgent-shortcut" type="button" data-safety>Мне очень плохо / экстренная помощь</button>
+        <p class="privacy-note">Без регистрации. Мы не сохраняем твои ответы.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+        <div class="ground-line"></div>
+        <span class="art-caption">сейчас — уже достаточно</span>
+      </div>
+      <p class="home-foot">Это не терапия и не экстренная служба. Только короткая практика и следующий шаг.</p>
+    </section>
+
+    <section class="screen" id="choose" aria-labelledby="choose-title" hidden>
+      <button class="back-link" type="button" data-go="home">← На главную</button>
+      <div class="content-narrow">
+        <h2 id="choose-title">Что сейчас ближе?</h2>
+        <p class="section-intro">Выбери то, что хоть немного похоже. Названия — ориентиры, не диагноз.</p>
+        <div class="choice-list" role="group" aria-label="Выбери состояние">
+          <button class="choice" type="button" data-mood="anxious"><span><strong>Тревога</strong><small>Всё ощущается слишком громко, трудно успокоиться</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+          <button class="choice" type="button" data-mood="panic"><span><strong>Паника — резко накрывает</strong><small>Сердце колотится, дыхание сбивается, сложно сосредоточиться</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+          <button class="choice" type="button" data-mood="low"><span><strong>Грусть или апатия</strong><small>Пусто, одиноко или совсем нет сил</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+          <button class="choice" type="button" data-mood="overloaded"><span><strong>Злость или перегруз</strong><small>Слишком много всего, хочется сделать паузу</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+          <button class="choice" type="button" data-mood="stuck"><span><strong>Выгорание или застой</strong><small>Трудно собраться и начать даже с малого</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+          <button class="choice" type="button" data-mood="derealization"><span><strong>Всё вокруг будто нереальное</strong><small>Ощущение отстранённости от мира (дереализация)</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+          <button class="choice" type="button" data-mood="depersonalization"><span><strong>Будто я не совсем здесь</strong><small>Ощущение отстранённости от себя (деперсонализация)</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+          <button class="choice choice-simple" type="button" data-mood="unsure"><span><strong>Не понимаю, что со мной</strong><small>Можно начать с простого</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
+        </div>
+        <p class="small-note">Ничего не нужно рассказывать или оценивать.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="practice" aria-labelledby="practice-title" hidden>
+      <button class="back-link" type="button" id="practice-back">← К выбору</button>
+      <div class="practice-wrap">
+        <div class="practice-meta"><span class="eyebrow" id="practice-label">короткая практика</span><span class="step-count" id="step-count">шаг 1 из 4</span></div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+        <p class="practice-kicker" id="practice-kicker">Сначала просто оглянись</p>
+        <h2 id="practice-title">Найди глазами<br>один спокойный предмет.</h2>
+        <p class="practice-text" id="practice-text">Ненадолго задержи на нём взгляд, если это комфортно.</p>
+        <div class="practice-mark" aria-hidden="true">
+          <svg class="practice-leaf" viewBox="0 0 40 40" fill="none" focusable="false">
+            <path d="M19 32c0-9 2.6-15.4 11.5-23" stroke="#819884" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M19.5 25.5C11.8 25 8.2 20.7 8.5 13.2c7.1.1 11.4 3.8 11 11.7Z" fill="#CFDDCE" stroke="#819884" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M21 21.5c.2-7.4 4.5-11.6 11.5-12.7.5 7.5-3.4 12.1-11.5 12.7Z" fill="#DCE7D9" stroke="#819884" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="action-choices" id="action-choices" hidden></div>
+        <div class="interaction-response" id="interaction-response" aria-live="polite" hidden></div>
+        <div class="practice-actions">
+          <button class="primary-button" type="button" id="next-step">Дальше <span aria-hidden="true">→</span></button>
+          <button class="quiet-button" type="button" data-go="choose">Выбрать другое состояние</button>
+        </div>
+        <p class="small-note">Иди в своём темпе. Можно остановиться в любой момент.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="finish" aria-labelledby="finish-title" hidden>
+      <div class="content-narrow finish-copy">
+        <p class="eyebrow">спасибо за эту минуту</p>
+        <h2 id="finish-title">Что тебе сейчас нужнее?</h2>
+        <p class="section-intro">Не обязательно чувствовать себя иначе. Можно просто выбрать следующий шаг.</p>
+        <div class="finish-options">
+          <button type="button" class="finish-option" data-restart>Попробовать другую минутную практику <span aria-hidden="true">›</span></button>
+          <button type="button" class="finish-option" data-feedback="easier">Стало немного легче <span aria-hidden="true">›</span></button>
+          <button type="button" class="finish-option" data-feedback="person">Хочу написать кому-то <span aria-hidden="true">›</span></button>
+          <button type="button" class="finish-option" data-feedback="nochange">Не помогло или стало хуже <span aria-hidden="true">›</span></button>
+          <button type="button" class="finish-option" data-feedback="done">Вернуться к своему делу <span aria-hidden="true">›</span></button>
+        </div>
+        <div class="feedback-area" id="feedback-area" aria-live="polite" hidden></div>
+        <button class="text-button" type="button" data-go="home">Вернуться на главную</button>
+      </div>
+    </section>
+
+    <section class="screen safety-screen" id="safety" aria-labelledby="safety-title" hidden>
+      
+      <div class="safety-content">
+        <div class="safety-label">
+          <div class="safety-symbol" aria-hidden="true">!</div>
+          <p class="eyebrow">поддержка рядом</p>
+        </div>
+        <h2 id="safety-title">Есть мысли навредить себе или не хочется жить?</h2>
+        <p class="safety-reassurance">Сейчас тяжело. Но всё плохое имеет свойство заканчиваться.</p>
+        <p class="section-intro">Если вред уже причинён или ты можешь сделать это прямо сейчас — позвони 112 и постарайся быть рядом с кем-то.</p>
+        <a class="primary-button safety-action" href="tel:112">Позвонить 112 <span aria-hidden="true">›</span></a>
+        <button class="secondary-button soft-support-button" type="button" data-go="soft-support">Сейчас прямой опасности нет, но мне очень тяжело</button>
+        <p class="small-note safety-note">В России — 112. В другой стране используй местный экстренный номер.</p>
+      </div>
+    </section>
+
+    <section class="screen safety-screen" id="soft-support" aria-labelledby="soft-support-title" hidden>
+      <button class="back-link" type="button" data-back>← Назад</button>
+      <div class="safety-content">
+        <p class="eyebrow">коротко о поддержке</p>
+        <h2 id="soft-support-title">Связаться с поддержкой</h2>
+        <p class="country-note"><strong>Контакты для России.</strong> <a href="https://findahelpline.com/" target="_blank" rel="noreferrer">В другой стране — найти местную линию</a></p>
+        <div class="support-links">
+          <a class="support-link" href="https://t.me/psy_rrc_bot" target="_blank" rel="noreferrer"><span><strong>Написать в Telegram · Красный Крест</strong><small>Ежедневно 9:00–00:00 МСК</small></span><span>Открыть ›</span></a>
+          <a class="support-link" href="tel:+78002501859"><span><strong>Позвонить · Красный Крест</strong><small>8 800 250-18-59 · ежедневно 7:00–22:00 МСК · бесплатно</small></span><span>Позвонить ›</span></a>
+          <a class="support-link" href="tel:+74959895050"><span><strong>Психологическая помощь МЧС</strong><small>+7 495 989-50-50 · круглосуточно · межгород по тарифу</small></span><span>Позвонить ›</span></a>
+        </div>
+        <section class="moodgym-bot-card" id="moodgym-bot-card" aria-labelledby="moodgym-bot-title" hidden>
+          <p class="eyebrow">бесплатно · можно начать сразу</p>
+          <h3 id="moodgym-bot-title">Бот MoodGym</h3>
+          <p>Если сейчас не хочется говорить с человеком, напиши боту MoodGym — как заметку в телефоне, в своём темпе. Он ответит и поможет выбрать следующий посильный шаг.</p>
+          <a class="moodgym-bot-cta" id="moodgym-bot-link" href="#" hidden>Открыть бота в Telegram <span aria-hidden="true">↗</span></a>
+        </section>
+        <section class="psychologist-card" aria-labelledby="psychologist-title">
+          <p class="eyebrow">личные консультации · отдельный формат</p>
+          <h3 id="psychologist-title">Юнна Матвеева · психолог</h3>
+          <p>Тревога, выгорание, пустота, застой и боль. Инструменты репарационной психологии. Бережно, без обещаний мгновенного исцеления — буду рядом.</p>
+          <div class="profile-contacts">
+            <a href="https://t.me/moriarka" target="_blank" rel="noreferrer">Написать в Telegram</a>
+            <a href="https://www.instagram.com/yunnanke_psy/" target="_blank" rel="noreferrer">Instagram · @yunnanke_psy</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer class="footer"><span>MOODGYM · ЭМОЦИОНАЛЬНЫЕ НАВЫКИ</span></footer>
+  </main>
+  <script src="site-bot-config.js?v=2026-10-28-1"></script>
+  <script src="app.js?v=2026-11-02-static-1"></script>
+</body>
+</html>
+
