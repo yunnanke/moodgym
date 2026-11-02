@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f6f3eb">
   <meta name="description" content="Кликабельный тестовый макет MoodGym: короткая практика в трудную минуту.">
   <title>MoodGym — короткая пауза</title>
-  <link rel="stylesheet" href="styles.css?v=2026-11-02-static-1">
+  <link rel="stylesheet" href="styles.css?v=2026-11-02-static-2">
 </head>
 <body>
   <main class="shell">
@@ -36,7 +36,6 @@
         <div class="ground-line"></div>
         <span class="art-caption">сейчас — уже достаточно</span>
       </div>
-      <p class="home-foot">Это не терапия и не экстренная служба. Только короткая практика и следующий шаг.</p>
     </section>
 
     <section class="screen" id="choose" aria-labelledby="choose-title" hidden>
@@ -44,6 +43,7 @@
       <div class="content-narrow">
         <h2 id="choose-title">Что сейчас ближе?</h2>
         <p class="section-intro">Выбери то, что хоть немного похоже. Названия — ориентиры, не диагноз.</p>
+        <p class="small-note choose-note">(Ничего не нужно рассказывать или оценивать.)</p>
         <div class="choice-list" role="group" aria-label="Выбери состояние">
           <button class="choice" type="button" data-mood="anxious"><span><strong>Тревога</strong><small>Всё ощущается слишком громко, трудно успокоиться</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
           <button class="choice" type="button" data-mood="panic"><span><strong>Паника — резко накрывает</strong><small>Сердце колотится, дыхание сбивается, сложно сосредоточиться</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
@@ -54,7 +54,6 @@
           <button class="choice" type="button" data-mood="depersonalization"><span><strong>Будто я не совсем здесь</strong><small>Ощущение отстранённости от себя (деперсонализация)</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
           <button class="choice choice-simple" type="button" data-mood="unsure"><span><strong>Не понимаю, что со мной</strong><small>Можно начать с простого</small></span><span class="choice-arrow" aria-hidden="true">›</span></button>
         </div>
-        <p class="small-note">Ничего не нужно рассказывать или оценивать.</p>
       </div>
     </section>
 
@@ -119,19 +118,18 @@
     <section class="screen safety-screen" id="soft-support" aria-labelledby="soft-support-title" hidden>
       <button class="back-link" type="button" data-back>← Назад</button>
       <div class="safety-content">
-        <p class="eyebrow">коротко о поддержке</p>
+        <div class="support-heading-space" aria-hidden="true"></div>
         <h2 id="soft-support-title">Связаться с поддержкой</h2>
         <p class="country-note"><strong>Контакты для России.</strong> <a href="https://findahelpline.com/" target="_blank" rel="noreferrer">В другой стране — найти местную линию</a></p>
         <div class="support-links">
           <a class="support-link" href="https://t.me/psy_rrc_bot" target="_blank" rel="noreferrer"><span><strong>Написать в Telegram · Красный Крест</strong><small>Ежедневно 9:00–00:00 МСК</small></span><span>Открыть ›</span></a>
           <a class="support-link" href="tel:+78002501859"><span><strong>Позвонить · Красный Крест</strong><small>8 800 250-18-59 · ежедневно 7:00–22:00 МСК · бесплатно</small></span><span>Позвонить ›</span></a>
-          <a class="support-link" href="tel:+74959895050"><span><strong>Психологическая помощь МЧС</strong><small>+7 495 989-50-50 · круглосуточно · межгород по тарифу</small></span><span>Позвонить ›</span></a>
         </div>
         <section class="moodgym-bot-card" id="moodgym-bot-card" aria-labelledby="moodgym-bot-title" hidden>
           <p class="eyebrow">бесплатно · можно начать сразу</p>
           <h3 id="moodgym-bot-title">Бот MoodGym</h3>
           <p>Если сейчас не хочется говорить с человеком, напиши боту MoodGym — как заметку в телефоне, в своём темпе. Он ответит и поможет выбрать следующий посильный шаг.</p>
-          <a class="moodgym-bot-cta" id="moodgym-bot-link" href="#" hidden>Открыть бота в Telegram <span aria-hidden="true">↗</span></a>
+          <a class="moodgym-bot-cta" id="moodgym-bot-link" href="#" hidden>Открыть бота в Telegram</a>
         </section>
         <section class="psychologist-card" aria-labelledby="psychologist-title">
           <p class="eyebrow">личные консультации · отдельный формат</p>
@@ -145,7 +143,7 @@
       </div>
     </section>
 
-    <footer class="footer"><span>MOODGYM · ЭМОЦИОНАЛЬНЫЕ НАВЫКИ</span></footer>
+    <footer class="footer"><span>MOODGYM · ЭМОЦИОНАЛЬНЫЕ НАВЫКИ</span><span class="footer-disclaimer">Это не терапия и не экстренная служба. Только короткая практика и следующий шаг.</span></footer>
   </main>
   <script src="site-bot-config.js?v=2026-10-28-1"></script>
   <script src="app.js?v=2026-11-02-static-1"></script>
