@@ -290,6 +290,49 @@
 .feedback-change{display:inline-block;margin-top:13px;padding:3px 0;border:0;background:none;color:#74877d;font:500 12px var(--sans);text-decoration:underline;text-decoration-color:#b8c5bb;text-underline-offset:3px;cursor:pointer}
 .feedback-change:hover{color:#245a47;text-decoration-color:#245a47}
 
+/* UX review: a one-minute core route, optional practice, and grouped next actions. */
+.practice-time{margin:12px 0 0;color:#718278;font-size:13px;line-height:1.4}
+.practice-actions{flex-wrap:wrap}
+.skip-step{color:#4c6c5d;text-decoration:underline;text-decoration-color:#b6c7bb;text-underline-offset:3px}
+.practice-wrap.is-extra .practice-kicker{font-size:16px}
+#finish .finish-group{margin:22px 0 0}
+#finish .finish-group h3{margin:0 0 9px;color:#526c62;font:600 14px/1.4 var(--sans)}
+#finish .finish-options{margin-top:0;grid-template-columns:1fr}
+#finish .finish-evaluation-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+#finish .finish-option{min-height:54px}
+#finish .finish-help-option{border-color:#bd8a70;color:#713a26;background:#fffaf5}
+#finish .finish-primary-option{border-color:var(--green);background:var(--green);color:#fff;font-weight:700}
+#finish .finish-primary-option span{color:#fff}
+#finish .extra-practice-note{margin:7px 0 0;font-size:12px}
+#finish .feedback-area>p{font-size:14px}
+#soft-support .support-section{margin:0 0 18px}
+#soft-support .support-section h3{margin:0 0 7px;color:#526c62;font:600 16px/1.35 var(--sans)}
+#soft-support .support-section>p:not(.country-note){margin:0 0 10px;color:var(--muted);font-size:14px;line-height:1.5}
+#soft-support .support-emergency{padding:14px 16px;border:1px solid #d8b5a0;border-radius:6px;background:#fff8f2}
+#soft-support .support-emergency h3{color:#713a26}
+#soft-support .support-emergency-call{min-height:46px;gap:24px}
+#soft-support .moodgym-bot-card{margin-top:14px}
+#soft-support .psychologist-card{margin-top:16px}
+#soft-support .moodgym-bot-card .eyebrow,#soft-support .psychologist-card .eyebrow{margin-bottom:6px}
+#soft-support .psychologist-card p:last-of-type{margin-bottom:0}
+
+@media(max-width:560px){
+  #home .hero-copy .lead{font-size:15px}
+  #practice .practice-time{margin-top:9px;font-size:13px}
+  #practice .practice-actions{gap:8px}
+  #practice .skip-step{order:2}
+  #practice .practice-actions [data-go="choose"]{order:3}
+  #finish .finish-group{margin-top:18px}
+  #finish .finish-evaluation-options{grid-template-columns:1fr}
+  #finish .finish-option{min-height:52px;padding:11px 12px}
+  #finish .finish-primary-option{min-height:56px}
+  #soft-support .support-section{margin-bottom:16px}
+  #soft-support .support-section h3{font-size:15px}
+  #soft-support .support-emergency{padding:12px}
+  #soft-support .support-emergency-call{width:auto;min-width:180px}
+  #soft-support .moodgym-bot-card,#soft-support .psychologist-card{margin-top:12px}
+}
+
 @media(max-width:560px){
   #home .hero-copy .hero-art-mini+.primary-button{width:auto;max-width:none}
 }

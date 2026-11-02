@@ -24,61 +24,53 @@ let activeTechniques = [];
 let practiceCatalog = null;
 const practices = {
   anxious: [
-    ['Сначала просто оглянись', 'Найди глазами<br>один предмет вокруг.', 'Можно выбрать любой. Ненадолго задержи на нём взгляд, если это комфортно.', ''],
-    ['Заметь опору', 'Почувствуй, что<br>держит тебя сейчас.', 'Обрати внимание на стопы на полу или спину на опоре. Ничего не меняй — только заметь.', ''],
-    ['Выбери один маленький шаг', 'Что сейчас будет посильным?', 'Можно выбрать вариант или оставить этот шаг без ответа.', '']
+    ['Тревога · сначала опора', 'Если комфортно, обними себя или положи ладонь на грудь.', 'Останься так на несколько спокойных выдохов. Не нужно менять дыхание.', '≈ 15 секунд'],
+    ['Тревога · назвать главное', 'Коротко назови, о чём эта тревога.', 'Достаточно одного слова или фразы. Не нужно записывать все мысли.', '≈ 15 секунд']
   ],
   panic: [
-    ['Посмотри вокруг', 'Назови про себя<br>одно место, где ты сейчас.', 'Не нужно искать причину происходящего. Просто отметь: «Я сейчас здесь».', ''],
-    ['Найди одну опору', 'Заметь один звук<br>или одно прикосновение.', 'Выбери что-то нейтральное вокруг. Если не хочется — пропусти этот шаг.', ''],
-    ['Выбери следующий шаг', 'Что поможет тебе<br>сейчас хоть немного?', 'Можно выбрать вариант или оставить этот шаг без ответа.', '']
+    ['Паника · внешний ориентир', 'Посмотри на один нейтральный предмет.', 'Назови про себя его цвет или форму. Не нужно пристально всматриваться.', '≈ 15 секунд'],
+    ['Паника · здесь и сейчас', 'Отметь одну вещь, которую слышишь.', 'Если звуки неприятны, вместо этого почувствуй стопы на полу.', '≈ 15 секунд']
   ],
   overloaded: [
-    ['Сделай короткую паузу', 'Положи ладони<br>на любую поверхность.', 'Стол, колени, подлокотник. Почувствуй поверхность под ладонями. Можно не закрывать глаза.', ''],
-    ['Ослабь усилие', 'Если хочется —<br>разожми пальцы.', 'Не нужно заставлять себя расслабляться. Просто проверь, есть ли место, где можно отпустить совсем немного.', ''],
-    ['Верни себе выбор', 'Какой следующий шаг<br>будет посильным?', 'Можно выбрать вариант или оставить этот шаг без ответа.', '']
+    ['Перегруз · пауза', 'Положи ладони на любую поверхность.', 'Заметь её на ощупь. Глаза можно оставить открытыми.', '≈ 15 секунд'],
+    ['Перегруз · снизить шум', 'Убери один небольшой раздражитель.', 'Например, отключи одно уведомление или отложи одну вещь, которая отвлекает.', '≈ 15 секунд']
   ],
   low: [
-    ['Останься в настоящем', 'Найди глазами<br>что-то знакомое.', 'Можно выбрать предмет, цвет или форму. Не нужно заставлять себя почувствовать что-то определённое.', ''],
-    ['Заметь, что рядом', 'Почувствуй опору<br>под собой.', 'Если хочется, можно поставить ноги на пол или опереться спиной. Можно ничего не менять.', ''],
-    ['Выбери, что будет бережно', 'Что может поддержать<br>ближайшие минуты?', 'Можно выбрать вариант или оставить этот шаг без ответа.', '']
+    ['Грусть · заметить рядом', 'Найди глазами одну знакомую вещь.', 'Просто назови её про себя. Не нужно добиваться особого чувства.', '≈ 15 секунд'],
+    ['Грусть · проверить потребность', 'Проверь, нужно ли тебе сейчас что-то простое.', 'Вода, тепло или удобнее сесть — выбери только одно, если хочется.', '≈ 20 секунд']
   ],
   derealization: [
-    ['Оглянись, если комфортно', 'Найди глазами<br>один знакомый предмет.', 'Можно назвать его про себя и отметить один цвет или форму. Если это усиливает дискомфорт — остановись и выбери другой шаг.', ''],
-    ['Заметь точку опоры', 'Почувствуй поверхность<br>под ладонью или стопой.', 'Не нужно менять ощущения. Просто отметь контакт, если это сейчас подходит.', ''],
-    ['Выбери поддержку', 'Что будет посильным<br>прямо сейчас?', 'Можно написать близкому, перейти в спокойное место или ничего пока не менять.', '']
+    ['Внешний ориентир · увидеть', 'Найди один обычный предмет вокруг.', 'Назови его цвет. Если смотреть неприятно — остановись.', '≈ 15 секунд'],
+    ['Внешний ориентир · коснуться', 'Если комфортно, коснись ближайшей поверхности.', 'Отметь одно её свойство: например, гладкая или прохладная.', '≈ 15 секунд']
   ],
   depersonalization: [
-    ['Мягко отметь настоящее', 'Назови про себя<br>своё имя и место.', 'Только если это помогает. Можно вместо этого выбрать любой нейтральный предмет вокруг.', ''],
-    ['Заметь внешний ориентир', 'Найди глазами<br>один цвет или форму.', 'Не нужно заставлять себя что-либо чувствовать. Если становится некомфортно — пропусти этот шаг.', ''],
-    ['Выбери поддержку', 'Что будет посильным<br>прямо сейчас?', 'Можно написать близкому, перейти в спокойное место или ничего пока не менять.', '']
+    ['Внешний ориентир · место', 'Назови про себя, где ты сейчас.', 'Достаточно простого ответа: дома, на улице, в транспорте или другое.', '≈ 15 секунд'],
+    ['Внешний ориентир · предмет', 'Найди одну знакомую вещь вокруг.', 'Назови её и для чего обычно её используют. Если не подходит — пропусти.', '≈ 15 секунд']
   ],
   stuck: [
-    ['Не нужно решать всё', 'Почувствуй стопы<br>на полу.', 'Можно чуть пошевелить пальцами ног или просто заметить опору под ними.', ''],
-    ['Выбери одно движение', 'Какое простое<br>движение доступно?', 'Например, подвигать пальцами или повернуть голову — только если комфортно.', ''],
-    ['Назови самый малый шаг', 'Что можно сделать<br>за одну минуту?', 'Можно выбрать вариант или оставить этот шаг без ответа.', '']
+    ['Начать с малого · опора', 'Почувствуй стопы на полу или опору под собой.', 'Ничего менять не нужно — просто заметь контакт.', '≈ 15 секунд'],
+    ['Начать с малого · действие', 'Назови одно действие, с которого можно начать.', 'Например: открыть файл, найти вещь или написать первую строку.', '≈ 20 секунд']
   ],
   unsure: [
-    ['Сначала просто оглянись', 'Найди глазами<br>один предмет вокруг.', 'Можно выбрать любой. Ненадолго задержи на нём взгляд, если это комфортно.', ''],
-    ['Заметь опору', 'Почувствуй, что<br>держит тебя сейчас.', 'Обрати внимание на стопы на полу или спину на опоре. Ничего не меняй — только заметь.', ''],
-    ['Выбери один маленький шаг', 'Что сейчас будет посильным?', 'Можно выбрать вариант или оставить этот шаг без ответа.', '']
+    ['Начать с простого · увидеть', 'Найди глазами один обычный предмет.', 'Назови про себя его цвет или форму.', '≈ 15 секунд'],
+    ['Начать с простого · заметить', 'Заметь одну вещь, которая сейчас рядом.', 'Это может быть звук, поверхность или опора под ногами.', '≈ 15 секунд']
   ]
 };
 const themeInteractions = {
   anxious: {
     section: 'Тревога · следующий шаг',
-    title: 'Раздели тревогу на части',
-    intro: 'Выбери, что сейчас ближе к этой тревоге.',
+    title: 'Как можно поступить с тревогой?',
+    intro: 'Выбери один небольшой вариант. Здесь не нужно решать всё сразу.',
     options: [
-      ['Могу повлиять на это сейчас', 'Выбери одно действие на ближайшие пару минут. Достаточно только начать.'],
-      ['Вернусь к этому позже', 'Запиши или мысленно отметь время, когда вернёшься к вопросу. Сейчас можно переключиться на ближайшее дело.'],
-      ['Пока не могу на это повлиять', 'Можно отложить решение и выбрать, что поможет тебе провести ближайшие минуты.']
+      ['Сделать один шаг сейчас', 'Выбери действие, которое можно начать за полминуты. Например, открыть нужный файл или написать одно предложение.'],
+      ['Вернуться к этому позже', 'Отметь время, когда вернёшься к вопросу. Сейчас переключись на одно простое дело.'],
+      ['Отложить то, что не зависит от меня', 'Назови про себя то, на что сейчас нельзя повлиять, и выбери ближайшее небольшое дело.']
     ]
   },
   panic: {
     section: 'Паника · внешний ориентир',
     title: 'Выбери нейтральную точку опоры',
-    intro: 'Ориентируйся на то, что снаружи. Выбери только то, что не усиливает дискомфорт.',
+    intro: 'Выбери один внешний ориентир, который не усиливает дискомфорт.',
     options: [
       ['Предмет, который я вижу', 'Назови его обычное название и один заметный цвет. Можно остановиться на этом.'],
       ['Нейтральный звук вокруг', 'Отметь, откуда он может идти. Если звуки мешают — выбери другой вариант.'],
@@ -88,7 +80,7 @@ const themeInteractions = {
   overloaded: {
     section: 'Перегруз · снизить нагрузку',
     title: 'Что можно временно убрать?',
-    intro: 'Выбери один источник нагрузки, который можно уменьшить на ближайшие минуты.',
+    intro: 'Выбери один источник нагрузки, который можно уменьшить прямо сейчас.',
     options: [
       ['Уведомления или лишний звук', 'Отключи один источник шума или уведомлений, если это удобно.'],
       ['Одну задачу', 'Отложи или раздели одно дело на более маленький шаг.'],
@@ -98,7 +90,7 @@ const themeInteractions = {
   low: {
     section: 'Грусть · бережный выбор',
     title: 'Какой тип шага сейчас доступнее?',
-    intro: 'Не нужно добиваться настроения получше. Выбери самый посильный вариант.',
+    intro: 'Не нужно менять настроение. Выбери один посильный шаг.',
     options: [
       ['Позаботиться о базовом', 'Проверь, хочется ли воды, еды, тепла или удобного положения. Можно выбрать только одно.'],
       ['Добавить что-то знакомое', 'Выбери знакомую музыку, предмет или спокойное занятие, если это сейчас подходит.'],
@@ -108,7 +100,7 @@ const themeInteractions = {
   stuck: {
     section: 'Трудно собраться · начать с малого',
     title: 'Выбери старт, а не весь результат',
-    intro: 'Подумай о деле, которое откладываешь. Какой первый шаг проще всего начать?',
+    intro: 'Подумай об одном отложенном деле. Выбери, с какого маленького шага начать.',
     options: [
       ['Открыть нужный файл или вкладку', 'Открой только нужное место. Продолжать прямо сейчас необязательно.'],
       ['Подготовить один предмет', 'Положи рядом то, что понадобится для первого шага.'],
@@ -118,7 +110,7 @@ const themeInteractions = {
   unsure: {
     section: 'Неясное состояние · подобрать слова',
     title: 'Какое слово чуть ближе?',
-    intro: 'Можно выбрать приблизительное слово или оставить ощущение без названия. Это не диагноз.',
+    intro: 'Выбери слово, которое примерно подходит, или оставь это без названия.',
     options: [
       ['Тревожно', 'Можно заметить: «Сейчас есть тревога». Не нужно сразу искать её причину.'],
       ['Грустно или пусто', 'Можно признать это состояние без требования немедленно его изменить.'],
@@ -190,49 +182,63 @@ function drawThemeInteraction() {
   }
 }
 function renderStep() {
-  const isInteraction = stepIndex === 3;
-  const technique = activeTechniques[stepIndex];
-  const step = practices[activeMood][Math.min(stepIndex, 2)];
+  const isInteraction = stepIndex === 2;
+  const isExtra = stepIndex === 3;
+  const technique = activeTechniques[0];
+  const step = practices[activeMood][Math.min(stepIndex, 1)];
   const interaction = themeInteractions[activeMood];
-  stepCount.textContent = `шаг ${stepIndex + 1} из 4`;
-  progressFill.style.width = `${((stepIndex + 1) / 4) * 100}%`;
-  kicker.textContent = isInteraction ? interaction.section : (technique ? technique.section : step[0]);
-  title.textContent = isInteraction ? interaction.title : (technique ? technique.title : step[1].replace(/<br\s*\/?\s*>/gi, ' '));
-  copy.textContent = isInteraction ? interaction.intro : (technique ? technique.instruction : step[2]);
+  stepCount.textContent = isExtra ? 'по желанию' : `шаг ${stepIndex + 1} из 3`;
+  progressFill.style.width = `${(Math.min(stepIndex + 1, 3) / 3) * 100}%`;
+  kicker.textContent = isExtra ? `Дополнительно · ${technique?.section || 'упражнение'}` : (isInteraction ? interaction.section : step[0]);
+  title.textContent = isExtra ? (technique?.title || 'Дополнительное упражнение') : (isInteraction ? interaction.title : step[1].replace(/<br\s*\/?\s*>/gi, ' '));
+  copy.textContent = isExtra ? (technique?.instruction || 'Упражнение недоступно. Его можно пропустить.') : (isInteraction ? interaction.intro : step[2]);
+  const duration = document.getElementById('practice-time');
+  duration.textContent = isExtra ? estimateDuration(technique?.instruction || '') : (isInteraction ? 'Около 30 секунд' : step[3]);
+  document.getElementById('practice-label').textContent = isExtra ? 'необязательное упражнение' : 'короткая практика · около минуты';
   practiceWrap.classList.toggle('has-interaction', isInteraction);
+  practiceWrap.classList.toggle('is-extra', isExtra);
   actionChoices.hidden = !isInteraction;
   if (isInteraction) drawThemeInteraction();
   else { actionChoices.replaceChildren(); actionChoices.hidden = true; interactionResponse.replaceChildren(); interactionResponse.hidden = true; }
-  document.getElementById('next-step').innerHTML = isInteraction ? 'Завершить <span aria-hidden="true">›</span>' : 'Дальше <span aria-hidden="true">›</span>';
-  document.getElementById('practice-back').textContent = stepIndex === 0 ? '← К выбору' : '← Предыдущий шаг';
+  document.getElementById('next-step').innerHTML = stepIndex >= 2 ? 'Завершить <span aria-hidden="true">›</span>' : 'Дальше <span aria-hidden="true">›</span>';
+  document.getElementById('skip-step').textContent = isExtra ? 'Пропустить упражнение' : 'Пропустить шаг';
+  document.getElementById('practice-back').textContent = isExtra ? '← К завершению' : (stepIndex === 0 ? '← К выбору' : '← Предыдущий шаг');
 }
-function selectTechniqueSteps(items) {
-  const sections = new Map();
-  for (const item of items) {
-    if (!sections.has(item.section)) sections.set(item.section, []);
-    sections.get(item.section).push(item);
-  }
-  const groups = [...sections.values()].sort(() => Math.random() - 0.5);
-  const selected = [];
-  while (selected.length < 3 && groups.length) {
-    const group = groups.shift();
-    selected.push(group[Math.floor(Math.random() * group.length)]);
-  }
-  return selected;
+function estimateDuration(instruction) {
+  const numberWords = {одну: 1, один: 1, одна: 1, двух: 2, две: 2, два: 2, трёх: 3, три: 3, четырёх: 4, четыре: 4, пяти: 5, пять: 5, десяти: 10, десять: 10, пятнадцати: 15, пятнадцать: 15};
+  const digitMatch = instruction.match(/(\d+)\s*(?:минут\w*|мин\.?)/i);
+  if (digitMatch) return `Около ${digitMatch[1]} минут · можно остановиться раньше`;
+  const wordMatch = instruction.match(/(?:^|[^А-Яа-яЁё])(одну|один|одна|двух|две|два|трёх|три|четырёх|четыре|пяти|пять|десяти|десять|пятнадцати|пятнадцать)\s+минут\w*/iu);
+  return wordMatch ? `Около ${numberWords[wordMatch[1].toLowerCase()]} минут · можно остановиться раньше` : 'Время зависит от упражнения · можно остановиться раньше';
 }
-async function startPractice(mood = activeMood) {
-  activeMood = mood; stepIndex = 0; activeTechniques = [];
-  try {
+async function loadPracticeCatalog() {
+  if (!practiceCatalog) {
     const response = await fetch('data/practices.json');
     if (!response.ok) throw new Error('Каталог практик недоступен');
-    if (!practiceCatalog) practiceCatalog = await response.json();
-    const items = practiceCatalog.filter(item => item.state_key === mood);
-    activeTechniques = selectTechniqueSteps(items);
-    if (activeTechniques.length < 3) activeTechniques = [];
-  } catch (_) {
-    // The interview prototype remains usable when opened without its local server.
+    practiceCatalog = await response.json();
   }
+  return practiceCatalog;
+}
+function startPractice(mood = activeMood) {
+  activeMood = mood; stepIndex = 0; activeTechniques = [];
   renderStep(); showScreen('practice', {step: stepIndex});
+}
+async function startExtraPractice() {
+  try {
+    const catalog = await loadPracticeCatalog();
+    const options = catalog.filter(item => item.state_key === activeMood);
+    if (!options.length) throw new Error('Нет дополнительных упражнений');
+    activeTechniques = [options[Math.floor(Math.random() * options.length)]];
+    stepIndex = 3;
+    renderStep(); showScreen('practice', {step: stepIndex});
+  } catch (_) {
+    const area = document.getElementById('feedback-area');
+    area.replaceChildren(); area.hidden = false;
+    const message = document.createElement('p');
+    message.textContent = 'Дополнительное упражнение сейчас недоступно. Короткий маршрут уже завершён.';
+    area.append(message);
+    area.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
 }
 document.querySelector('[data-home]').addEventListener('click', event => { event.preventDefault(); showScreen('home'); });
 document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => showScreen(button.dataset.go)));
@@ -240,45 +246,43 @@ document.querySelectorAll('[data-safety]').forEach(button => button.addEventList
 document.querySelectorAll('[data-back]').forEach(button => button.addEventListener('click', () => window.history.back()));
 document.querySelectorAll('[data-mood]').forEach(button => button.addEventListener('click', () => startPractice(button.dataset.mood)));
 document.getElementById('practice-back').addEventListener('click', () => window.history.back());
-document.getElementById('next-step').addEventListener('click', () => {
-  if (stepIndex < 3) { stepIndex += 1; renderStep(); showScreen('practice', {step: stepIndex}); }
-  else {
-    document.getElementById('feedback-area').hidden = true;
-    document.querySelector('.finish-options').hidden = false;
-    showScreen('finish');
-  }
-});
+function finishPractice() {
+  const area = document.getElementById('feedback-area'); area.hidden = true; area.replaceChildren();
+  document.getElementById('finish-evaluation').hidden = false;
+  document.getElementById('finish-next-actions').hidden = false;
+  document.querySelector('[data-go="home"].text-button').hidden = false;
+  showScreen('finish');
+}
+function advancePracticeStep() {
+  if (stepIndex < 2) { stepIndex += 1; renderStep(); showScreen('practice', {step: stepIndex}); }
+  else finishPractice();
+}
+document.getElementById('next-step').addEventListener('click', advancePracticeStep);
+document.getElementById('skip-step').addEventListener('click', advancePracticeStep);
 document.querySelector('[data-restart]').addEventListener('click', () => showScreen('choose'));
+document.querySelector('[data-extra-practice]').addEventListener('click', startExtraPractice);
 document.querySelectorAll('[data-feedback]').forEach(button => button.addEventListener('click', () => {
   if (button.dataset.feedback === 'nochange') { showScreen('soft-support'); return; }
+  if (button.dataset.feedback === 'done') { showScreen('home'); return; }
   const area = document.getElementById('feedback-area'); area.replaceChildren(); area.hidden = false;
-  document.querySelector('.finish-options').hidden = true;
-  const messages = {
-    easier: 'Можно остановиться здесь или вернуться к делам в своём темпе.',
-    person: 'Вот фраза, с которой можно начать. Если не к кому обратиться, открой варианты поддержки.',
-    done: 'Можно вернуться к делам в своём темпе.'
-  };
-  const p = document.createElement('p'); p.textContent = messages[button.dataset.feedback]; area.append(p);
-  if (button.dataset.feedback === 'person') {
+  const person = button.dataset.feedback === 'person';
+  const p = document.createElement('p');
+  p.textContent = person ? 'Вот короткое сообщение, которое можно отправить близкому.' : 'Спасибо, что отметил(а). Можно выбрать следующий шаг, когда будешь готов(а).';
+  area.append(p);
+  if (person) {
+    document.getElementById('finish-evaluation').hidden = true;
+    document.getElementById('finish-next-actions').hidden = true;
+    document.querySelector('[data-go="home"].text-button').hidden = true;
     const card = document.createElement('div'); card.className = 'copy-card';
     const quote = document.createElement('p'); quote.textContent = '«Мне сейчас непросто. Можешь побыть со мной на связи или позвонить?»';
     const copyButton = document.createElement('button'); copyButton.type = 'button'; copyButton.className = 'copy-button'; copyButton.textContent = 'Скопировать текст';
     copyButton.addEventListener('click', () => copyText(quote.textContent, card)); card.append(quote, copyButton); area.append(card);
     const support = document.createElement('button'); support.type = 'button'; support.className = 'inline-action'; support.textContent = 'Если не к кому обратиться — посмотреть варианты поддержки';
     support.addEventListener('click', () => showScreen('soft-support')); area.append(support);
+    const back = document.createElement('button'); back.type = 'button'; back.className = 'feedback-change'; back.textContent = '← К вариантам';
+    back.addEventListener('click', () => finishPractice()); area.append(back);
   }
-  const changeButton = document.createElement('button');
-  changeButton.type = 'button';
-  changeButton.className = 'feedback-change';
-  changeButton.textContent = 'Выбрать другой вариант';
-  changeButton.addEventListener('click', () => {
-    area.hidden = true;
-    area.replaceChildren();
-    document.querySelector('.finish-options').hidden = false;
-    document.querySelector('.finish-options').scrollIntoView({behavior: 'smooth', block: 'center'});
-  });
-  area.append(changeButton);
-  area.scrollIntoView({behavior: 'smooth', block: 'center'});
+  area.scrollIntoView({behavior: 'smooth', block: person ? 'center' : 'nearest'});
 }));
 async function copyText(text, container) {
   let status = container.querySelector('.copy-status');
