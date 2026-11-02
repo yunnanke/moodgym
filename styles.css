@@ -217,6 +217,11 @@
   #soft-support .support-link small{font-size:14px}
 }
 
+@media(max-width:560px){
+  #home .hero-copy .hero-art-mini+.primary-button{width:auto;max-width:none}
+  #home .hero-art-mini .ground-line,#home .hero-art-mini .art-caption{display:none}
+}
+
 /* Follow-up mobile refinements from the latest phone review. */
 .hero-art-mini{display:none}
 .profile-contacts a{justify-content:center;text-align:center}
@@ -284,3 +289,7 @@
 .feedback-area>p{margin:0}
 .feedback-change{display:inline-block;margin-top:13px;padding:3px 0;border:0;background:none;color:#74877d;font:500 12px var(--sans);text-decoration:underline;text-decoration-color:#b8c5bb;text-underline-offset:3px;cursor:pointer}
 .feedback-change:hover{color:#245a47;text-decoration-color:#245a47}
+
+@media(max-width:560px){
+  #home .hero-copy .hero-art-mini+.primary-button{width:auto;max-width:none}
+}
